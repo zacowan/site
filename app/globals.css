@@ -7,8 +7,14 @@
     @apply bg-neutral-900;
     @apply text-neutral-50;
   }
+}
 
-  a {
-    @apply uppercase underline font-extrabold py-3;
+@layer components {
+  .chevron-hidden {
+    @apply blur -translate-x-full opacity-0;
+  }
+
+  .chevron-show {
+    @apply blur-0 translate-x-0 opacity-100;
   }
 }

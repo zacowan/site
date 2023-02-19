@@ -1,3 +1,6 @@
+import Anchor from "@/components/Anchor";
+import Project from "@/components/Project";
+
 export default function Home() {
   return (
     <main>
@@ -13,19 +16,11 @@ export default function Home() {
           </h1>
         </div>
         <div className="w-full ml-8 md:ml-0 flex justify-center">
-          <nav className="mt-40 space-y-1 max-w-prose w-full">
-            <a href="#" className="block">
-              About
-            </a>
-            <a href="#" className="block">
-              Projects
-            </a>
-            <a href="#" className="block">
-              Blog
-            </a>
-            <a href="#" className="block">
-              Connect
-            </a>
+          <nav className="mt-40 space-y-1 max-w-prose w-full flex flex-col">
+            <Anchor href="#">About</Anchor>
+            <Anchor href="#">Projects</Anchor>
+            <Anchor href="#">Blog</Anchor>
+            <Anchor href="#">Connect</Anchor>
           </nav>
         </div>
         <div className="w-full ml-8 md:ml-0 flex justify-center">
@@ -57,18 +52,19 @@ export default function Home() {
               everything I can to craft things with a passion towards
               perfection.
             </p>
-            <a
-              href="https://www.linkedin.com/in/zacowan"
-              className="md:ml-0 my-8 ml-3 block"
-            >
-              Résumé
-            </a>
+            <div className="w-16 h-48 bg-neutral-50 mt-10" />
           </div>
         </div>
+      </section>
+      <section>
         <div className="flex justify-center">
-          <div className="flex max-w-prose w-full">
-            <div className="top-0 bottom-0 w-16 bg-neutral-50" />
-            <ul className="ml-4 pb-40">
+          <div className="max-w-prose w-full">
+            <div className="h-16 w-16 bg-neutral-50" />
+            <h2 className="text-5xl lowercase font-black leading-relaxed tracking-tight px-3 border-l-8">
+              experience
+            </h2>
+            <div className="w-32 h-2 bg-neutral-50" />
+            <ul className="mt-10 md:ml-0 ml-3">
               <li className="lowercase font-extrabold tracking-tight text-2xl">
                 American Express
                 <ul className="text-neutral-300 font-normal text-base normal-case border-l border-neutral-500 pl-3 my-1">
@@ -85,6 +81,13 @@ export default function Home() {
                 </ul>
               </li>
             </ul>
+            <Anchor
+              href="https://www.linkedin.com/in/zacowan"
+              className="md:ml-0 mt-10 ml-3 block"
+            >
+              Résumé
+            </Anchor>
+            <div className="w-16 h-48 bg-neutral-50 mt-10" />
           </div>
         </div>
       </section>
@@ -92,31 +95,47 @@ export default function Home() {
         <div className="flex justify-center">
           <div className="max-w-prose w-full">
             <div className="h-16 w-16 bg-neutral-50" />
-            <h2 className="text-5xl lowercase font-black leading-relaxed tracking-tight px-3">
+            <h2 className="text-5xl lowercase font-black leading-relaxed tracking-tight px-3 border-l-8">
               projects
             </h2>
+            <div className="w-32 h-2 bg-neutral-50" />
           </div>
         </div>
         <div className="flex justify-center">
-          <ul className="max-w-prose w-full mt-10">
-            <li className="border-l-8 px-3 space-y-1">
-              <div>
-                <h3 className="font-extrabold lowercase text-lg tracking-wide">
-                  sight-based mouse controller
-                </h3>
-                <div
-                  aria-label="technology"
-                  className="text-neutral-300 text-sm"
-                >
-                  Python, machine learning
-                </div>
-              </div>
-              <div className="space-x-4">
-                <a href="#">GitHub</a>
-                <a href="#">Blog post</a>
-              </div>
-            </li>
-          </ul>
+          <div className="max-w-prose w-full mt-10">
+            <ul className="space-y-4 md:ml-0 ml-3">
+              <Project
+                title="sight-based mouse controller"
+                technology="Python, machine learning"
+                github="#"
+                blogPost="#"
+              />
+              <Project
+                title="sight-based mouse controller"
+                technology="Python, machine learning"
+                github="#"
+                blogPost="#"
+              />
+              <Project
+                title="sight-based mouse controller"
+                technology="Python, machine learning"
+                github="#"
+                blogPost="#"
+              />
+            </ul>
+            <div className="w-16 h-48 bg-neutral-50 mt-10" />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="flex justify-center">
+          <div className="max-w-prose w-full">
+            <div className="w-16 h-16 bg-neutral-50" />
+            <h2 className="text-5xl lowercase font-black leading-relaxed tracking-tight px-3 border-l-8">
+              recent posts
+            </h2>
+            <div className="w-32 h-2 bg-neutral-50" />
+          </div>
         </div>
       </section>
     </main>
