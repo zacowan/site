@@ -20,7 +20,14 @@ interface AnchorElementProps
   nextLink?: false;
 }
 
-type AnchorProps = (AnchorNextProps | AnchorElementProps) & BaseAnchorProps;
+export type AnchorProps = (AnchorNextProps | AnchorElementProps) &
+  BaseAnchorProps;
+
+export const linkClassName =
+  "uppercase underline font-extrabold py-3 group inline-flex items-center transition-all active:underline-offset-1";
+export const Chevron = () => (
+  <FiChevronLeft className="ml-1 transition-all chevron-hidden group-hover:chevron-show group-active:-translate-x-1" />
+);
 
 export default function Anchor({
   children,
@@ -32,13 +39,9 @@ export default function Anchor({
   const InnerComponents = () => (
     <>
       {children}
-      {chevron && (
-        <FiChevronLeft className="ml-1 transition-all chevron-hidden group-hover:chevron-show group-active:-translate-x-1" />
-      )}
+      {chevron && <Chevron />}
     </>
   );
-  const linkClassName =
-    "uppercase underline font-extrabold py-3 group inline-flex items-center transition-all active:underline-offset-1";
 
   if (nextLink) {
     return (

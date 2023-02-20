@@ -1,5 +1,6 @@
 import Anchor from "@/components/Anchor";
 import Project from "@/components/Project";
+import PostCard from "@/components/PostCard";
 
 const LINKS = {
   github: "https://www.github.com/zacowan",
@@ -154,6 +155,15 @@ export default function Home() {
         <div className="flex justify-center">
           <div className="max-w-prose w-full mt-10">
             <p className="md:ml-0 ml-3">There&apos;s nothing here.</p>
+            {/* <ul className="space-y-4 md:ml-0 ml-3">
+              <li>
+                <PostCard
+                  href="#"
+                  title="How I built sight-based mouse control software"
+                  description="Lorem ipsum it dolor"
+                />
+              </li>
+            </ul> */}
             <div className="w-full mt-10 h-24 bg-neutral-50" />
           </div>
         </div>
