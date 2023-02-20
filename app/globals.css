@@ -6,6 +6,7 @@
   html {
     @apply bg-neutral-900;
     @apply text-neutral-50;
+    scroll-behavior: smooth;
   }
 }
 

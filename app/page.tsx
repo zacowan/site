@@ -69,6 +69,9 @@ export default function Home() {
               the challenge of finding innovative ways to deliver the best
               possible user experience while leveraging cutting-edge technology.
             </p>
+            <Anchor href={LINKS.linkedin} className="md:ml-0 mt-4 ml-3 block">
+              Résumé
+            </Anchor>
             <div className="w-16 h-48 bg-neutral-50 mt-10" />
           </div>
         </div>
@@ -98,9 +101,6 @@ export default function Home() {
                 </ul>
               </li>
             </ul>
-            <Anchor href={LINKS.linkedin} className="md:ml-0 mt-10 ml-3 block">
-              Résumé
-            </Anchor>
             <div className="w-16 h-48 bg-neutral-50 mt-10" />
           </div>
         </div>
@@ -179,10 +179,14 @@ export default function Home() {
         </div>
         <div className="flex justify-center">
           <div className="max-w-prose w-full mt-10">
-            <ul className="space-y-4 md:ml-0 ml-3">
-              <li className="space-x-4">
+            <ul className=" md:ml-0 ml-3 space-x-4 flex">
+              <li>
                 <Anchor href={LINKS.github}>GitHub</Anchor>
+              </li>
+              <li>
                 <Anchor href={LINKS.linkedin}>LinkedIn</Anchor>
+              </li>
+              <li>
                 <Anchor href={LINKS.twitter}>Twitter</Anchor>
               </li>
             </ul>
