@@ -22,10 +22,10 @@ export default function RootLayout({
           <div className="max-w-prose w-full space-y-8">
             <ul className="flex space-x-4">
               <li>
-                <Anchor href="#">Home</Anchor>
+                <Anchor href="/">Home</Anchor>
               </li>
               <li>
-                <Anchor href="#">Blog</Anchor>
+                <Anchor href="/blog">Blog</Anchor>
               </li>
             </ul>
             <p className="block text-xs text-neutral-300">

@@ -1,6 +1,12 @@
 import Anchor from "@/components/Anchor";
 import Project from "@/components/Project";
 
+const LINKS = {
+  github: "https://www.github.com/zacowan",
+  linkedin: "https://www.linkedin.com/in/zacowan",
+  twitter: "https://twitter.com/zacowan_",
+};
+
 export default function Home() {
   return (
     <main>
@@ -17,10 +23,18 @@ export default function Home() {
         </div>
         <div className="w-full ml-8 md:ml-0 flex justify-center">
           <nav className="mt-40 space-y-1 max-w-prose w-full flex flex-col">
-            <Anchor href="#">About</Anchor>
-            <Anchor href="#">Projects</Anchor>
-            <Anchor href="#">Blog</Anchor>
-            <Anchor href="#">Connect</Anchor>
+            <Anchor nextLink={false} href="#about">
+              About
+            </Anchor>
+            <Anchor nextLink={false} href="#projects">
+              Projects
+            </Anchor>
+            <Anchor nextLink={false} href="#blog-posts">
+              Blog posts
+            </Anchor>
+            <Anchor nextLink={false} href="#connect">
+              Connect
+            </Anchor>
           </nav>
         </div>
         <div className="w-full ml-8 md:ml-0 flex justify-center">
@@ -29,14 +43,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="overflow-x-clip">
+      <section id="about" className="overflow-x-clip">
         <div className="w-full ml-8 md:ml-0 flex justify-center">
           <div className="max-w-prose w-full">
             <div className="w-8 h-16 bg-neutral-50" />
           </div>
         </div>
-        <div className="bg-neutral-50 w-full flex justify-center px-3">
-          <div className="max-w-prose w-full">
+        <div className="w-full flex justify-center">
+          <div className="max-w-prose w-full bg-neutral-50 px-3">
             <h2 className="text-5xl lowercase font-black leading-relaxed tracking-tight text-neutral-900">
               about
             </h2>
@@ -45,12 +59,14 @@ export default function Home() {
         <div className="flex justify-center">
           <div className="max-w-prose">
             <p className="md:px-0 px-3 mt-4 text-neutral-300">
-              I&apos;m a software engineer currently working at American
-              Express. My deep love of design helps drive my passion for
-              engineering <strong>joyful</strong> user experiences that{" "}
-              <strong>just make sense</strong>. I love engineering and do
-              everything I can to craft things with a passion towards
-              perfection.
+              As a blossoming software engineer, I possess a passion for fusing
+              design with engineering to develop exceptional digital products
+              that offer unparalleled user experiences. My career has been
+              kick-started by a relentless drive to create software solutions
+              that marry aesthetic and functionality. Whether it&apos;s web
+              applications, mobile software, or anything in between, I relish
+              the challenge of finding innovative ways to deliver the best
+              possible user experience while leveraging cutting-edge technology.
             </p>
             <div className="w-16 h-48 bg-neutral-50 mt-10" />
           </div>
@@ -81,17 +97,14 @@ export default function Home() {
                 </ul>
               </li>
             </ul>
-            <Anchor
-              href="https://www.linkedin.com/in/zacowan"
-              className="md:ml-0 mt-10 ml-3 block"
-            >
+            <Anchor href={LINKS.linkedin} className="md:ml-0 mt-10 ml-3 block">
               Résumé
             </Anchor>
             <div className="w-16 h-48 bg-neutral-50 mt-10" />
           </div>
         </div>
       </section>
-      <section>
+      <section id="projects">
         <div className="flex justify-center">
           <div className="max-w-prose w-full">
             <div className="h-16 w-16 bg-neutral-50" />
@@ -103,7 +116,8 @@ export default function Home() {
         </div>
         <div className="flex justify-center">
           <div className="max-w-prose w-full mt-10">
-            <ul className="space-y-4 md:ml-0 ml-3">
+            <p className="md:ml-0 ml-3">There&apos;s nothing here.</p>
+            {/* <ul className="space-y-4 md:ml-0 ml-3">
               <Project
                 title="sight-based mouse controller"
                 technology="Python, machine learning"
@@ -122,19 +136,46 @@ export default function Home() {
                 github="#"
                 blogPost="#"
               />
-            </ul>
+            </ul> */}
             <div className="w-16 h-48 bg-neutral-50 mt-10" />
           </div>
         </div>
       </section>
-      <section>
+      <section id="blog-posts">
         <div className="flex justify-center">
           <div className="max-w-prose w-full">
             <div className="w-16 h-16 bg-neutral-50" />
             <h2 className="text-5xl lowercase font-black leading-relaxed tracking-tight px-3 border-l-8">
-              recent posts
+              blog posts
             </h2>
             <div className="w-32 h-2 bg-neutral-50" />
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="max-w-prose w-full mt-10">
+            <p className="md:ml-0 ml-3">There&apos;s nothing here.</p>
+            <div className="w-full mt-10 h-24 bg-neutral-50" />
+          </div>
+        </div>
+      </section>
+      <section id="connect">
+        <div className="flex justify-center">
+          <div className="max-w-prose w-full">
+            <div className="h-8 w-full bg-neutral-50" />
+            <h2 className="text-5xl lowercase font-black leading-relaxed tracking-tight px-3 bg-neutral-50 text-neutral-900">
+              connect
+            </h2>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="max-w-prose w-full mt-10">
+            <ul className="space-y-4 md:ml-0 ml-3">
+              <li className="space-x-4">
+                <Anchor href={LINKS.github}>GitHub</Anchor>
+                <Anchor href={LINKS.linkedin}>LinkedIn</Anchor>
+                <Anchor href={LINKS.twitter}>Twitter</Anchor>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
