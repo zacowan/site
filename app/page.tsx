@@ -1,5 +1,5 @@
 import Anchor from "@/components/Anchor";
-import Project from "@/components/Project";
+import Project, { ProjectProps } from "@/components/Project";
 import PostCard from "@/components/PostCard";
 
 const LINKS = {
@@ -7,6 +7,43 @@ const LINKS = {
   linkedin: "https://www.linkedin.com/in/zacowan",
   twitter: "https://twitter.com/zacowan_",
 };
+
+const PROJECTS: ProjectProps[] = [
+  {
+    title: "sight-based mouse control software",
+    technology: "Python, machine learning",
+    links: [
+      {
+        label: "github",
+        href: "https://github.com/Scoobydoo181/Senior-Project-Fall-2022",
+      },
+    ],
+  },
+  {
+    title: `"Jump" platformer mobile game`,
+    technology: "Unity, C#",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/zacowan/Jump",
+      },
+    ],
+  },
+  {
+    title: `"swamp hacks" hackathon site & systems`,
+    technology: "JavaScript, google cloud, firebase, NFC",
+    links: [
+      {
+        label: "site github",
+        href: "https://github.com/swamphacks/2020-site",
+      },
+      {
+        label: "system github",
+        href: "https://github.com/swamphacks/swamphacks-internal",
+      },
+    ],
+  },
+];
 
 export default function Home() {
   return (
@@ -117,27 +154,11 @@ export default function Home() {
         </div>
         <div className="flex justify-center">
           <div className="max-w-prose w-full mt-10">
-            <p className="md:ml-0 ml-3">There&apos;s nothing here.</p>
-            {/* <ul className="space-y-4 md:ml-0 ml-3">
-              <Project
-                title="sight-based mouse controller"
-                technology="Python, machine learning"
-                github="#"
-                blogPost="#"
-              />
-              <Project
-                title="sight-based mouse controller"
-                technology="Python, machine learning"
-                github="#"
-                blogPost="#"
-              />
-              <Project
-                title="sight-based mouse controller"
-                technology="Python, machine learning"
-                github="#"
-                blogPost="#"
-              />
-            </ul> */}
+            <ul className="space-y-4 md:ml-0 ml-3">
+              {PROJECTS.map((project) => (
+                <Project key={project.title} {...project} />
+              ))}
+            </ul>
             <div className="w-16 h-48 bg-neutral-50 mt-10" />
           </div>
         </div>

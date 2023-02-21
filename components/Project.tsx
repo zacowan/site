@@ -1,18 +1,15 @@
 import Anchor from "./Anchor";
 
-interface ProjectProps {
+export interface ProjectProps {
   title: string;
   technology: string;
-  github?: string;
-  blogPost?: string;
+  links: Array<{
+    label: string;
+    href: string;
+  }>;
 }
 
-export default function Project({
-  github,
-  blogPost,
-  title,
-  technology,
-}: ProjectProps) {
+export default function Project({ links, title, technology }: ProjectProps) {
   return (
     <li className="border-l-4 px-3 space-y-1 hover:border-l-8 transition-all duration-75">
       <div>
@@ -23,9 +20,13 @@ export default function Project({
           {technology}
         </div>
       </div>
-      <div className="space-x-4">
-        {github && <Anchor href="#">GitHub</Anchor>}
-        {blogPost && <Anchor href="#">Blog post</Anchor>}
+      <div className="flex flex-wrap gap-x-4 gap-y-0">
+        {links.length === 0 && <p>No project links yet.</p>}
+        {links.map((link) => (
+          <Anchor key={link.label} href={link.href}>
+            {link.label}
+          </Anchor>
+        ))}
       </div>
     </li>
   );
