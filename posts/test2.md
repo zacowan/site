@@ -1,7 +1,6 @@
 ---
-title: Testing
+title: Testing 2
 description: this is a description
-slug: first-blog-post
 ---
 
 # Hello, world!

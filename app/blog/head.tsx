@@ -1,11 +1,11 @@
 export default function Head() {
   return (
     <>
-      <title>Zachary Cowan&apos;s Personal Website</title>
+      <title>Zachary Cowan&apos;s Blog</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="description"
-        content="Learn about Zachay Cowan's experience and connect with him."
+        content="Read about Zachary Cowan's thoughts on engineering and more!"
       />
       <link
         rel="apple-touch-icon"

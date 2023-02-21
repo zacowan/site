@@ -1,12 +1,17 @@
-export default function Head() {
+import { allPosts, Post } from "@/.contentlayer/generated";
+
+async function getPost(slug: string) {
+  return allPosts.find((post) => post.slug === slug) as Post;
+}
+
+export default async function Head({ params }: { params: { slug: string } }) {
+  const post = await getPost(params.slug);
+
   return (
     <>
-      <title>Zachary Cowan&apos;s Personal Website</title>
+      <title>{post.title}</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta
-        name="description"
-        content="Learn about Zachay Cowan's experience and connect with him."
-      />
+      <meta name="description" content={post.description} />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

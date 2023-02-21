@@ -1,7 +1,6 @@
 ---
-title: Testing 2
+title: Testing
 description: this is a description
-publishedAt: 2022-02-20
 ---
 
 # Hello, world!
