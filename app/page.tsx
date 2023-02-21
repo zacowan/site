@@ -48,7 +48,7 @@ const PROJECTS: ProjectProps[] = [
 export default function Home() {
   return (
     <main>
-      <section className="max-h-screen min-h-screen overflow-clip">
+      <section className="overflow-clip">
         <div className="flex items-center justify-center">
           <h1 className="text-7xl uppercase font-black mt-24 leading-relaxed">
             Hey,
@@ -77,7 +77,7 @@ export default function Home() {
         </div>
         <div className="w-full ml-8 md:ml-0 flex justify-center">
           <div className="max-w-prose w-full">
-            <div className="mt-4 w-8 h-screen bg-neutral-50" />
+            <div className="mt-4 w-8 h-96 bg-neutral-50" />
           </div>
         </div>
       </section>
