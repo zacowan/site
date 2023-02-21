@@ -48,7 +48,7 @@ const PROJECTS: ProjectProps[] = [
 export default function Home() {
   return (
     <main>
-      <section className="max-h-screen overflow-clip">
+      <section className="max-h-screen min-h-screen overflow-clip">
         <div className="flex items-center justify-center">
           <h1 className="text-7xl uppercase font-black mt-24 leading-relaxed">
             Hey,
@@ -60,7 +60,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="w-full ml-8 md:ml-0 flex justify-center">
-          <nav className="mt-40 space-y-1 max-w-prose w-full flex flex-col">
+          <nav className="md:mt-40 mt-20 space-y-1 max-w-prose w-full flex flex-col">
             <Anchor nextLink={false} href="#about">
               About
             </Anchor>
