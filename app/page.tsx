@@ -1,6 +1,7 @@
 import Anchor from "@/components/Anchor";
 import Project, { ProjectProps } from "@/components/Project";
 import PostCard from "@/components/PostCard";
+import { allPosts } from "@/.contentlayer/generated";
 
 const LINKS = {
   github: "https://www.github.com/zacowan",
@@ -45,7 +46,11 @@ const PROJECTS: ProjectProps[] = [
   },
 ];
 
-export default function Home() {
+const getPosts = async () => allPosts;
+
+export default async function Home() {
+  const posts = await getPosts();
+
   return (
     <main>
       <section className="overflow-clip">
@@ -176,15 +181,17 @@ export default function Home() {
         <div className="flex justify-center">
           <div className="max-w-prose w-full mt-10">
             <p className="md:ml-0 ml-3">There&apos;s nothing here.</p>
-            {/* <ul className="space-y-4 md:ml-0 ml-3">
-              <li>
-                <PostCard
-                  href="#"
-                  title="How I built sight-based mouse control software"
-                  description="Lorem ipsum it dolor"
-                />
-              </li>
-            </ul> */}
+            <ul className="space-y-4 md:ml-0 ml-3">
+              {posts.map((post) => (
+                <li key={post._id}>
+                  <PostCard
+                    href={`/blog/${post.slug}`}
+                    title={post.title}
+                    description={post.description}
+                  />
+                </li>
+              ))}
+            </ul>
             <div className="w-full mt-10 h-24 bg-neutral-50" />
           </div>
         </div>
