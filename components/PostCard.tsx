@@ -1,37 +1,53 @@
-import { Chevron, linkClassName } from "./Anchor";
-import Link from "next/link";
-import { formatDistance, subDays } from "date-fns";
+import Anchor from "./Anchor";
+import { formatDistance } from "date-fns";
+import Tag from "./Tag";
 
 interface PostCardProps {
   title: string;
-  description: string;
+  categories: string[];
   date: string;
   href: string;
 }
 
-// TODO: aria
 export default function PostCard({
   href,
   title,
-  description,
   date,
+  categories,
 }: PostCardProps) {
   return (
-    <Link
-      href={href}
-      className="border-4 border-neutral-50 flex flex-col px-4 py-2 hover:border-b-8 hover:border-r-8 transition-all duration-75 active:scale-[.99]"
+    <div
+      onClick={(event) => {
+        const link = event.currentTarget.querySelector("a");
+        link?.click();
+      }}
+      className="group/post-card border-4 border-neutral-50 flex flex-col px-4 py-2 focus-within:border-b-8 focus-within:border-r-8 hover:border-b-8 hover:border-r-8 transition-all duration-75 active:scale-[.99] space-y-3 cursor-pointer"
     >
-      <time className="text-xs text-neutral-300 lowercase pb-2">
-        {formatDistance(new Date(date), new Date(), { addSuffix: true })}
-      </time>
       <h3 className="font-extrabold text-xl tracking-wide">{title}</h3>
-      <p className="block text-neutral-300">{description}</p>
-      <span className="flex justify-end">
-        <span className={linkClassName}>
-          View
-          <Chevron />
-        </span>
+      <ul
+        aria-label="categories"
+        className="text-xs uppercase flex gap-2 flex-wrap"
+      >
+        {categories.map((category) => (
+          <li key={category}>
+            <Tag>{category}</Tag>
+          </li>
+        ))}
+      </ul>
+      <span className="flex justify-between items-center">
+        <time
+          aria-label="publish time"
+          className="text-xs text-neutral-300 lowercase"
+        >
+          {formatDistance(new Date(date), new Date(), { addSuffix: true })}
+        </time>
+        <Anchor
+          chevronClassName="group-hover/post-card:chevron-show"
+          href={href}
+        >
+          Read Post
+        </Anchor>
       </span>
-    </Link>
+    </div>
   );
 }

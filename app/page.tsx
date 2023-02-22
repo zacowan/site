@@ -11,7 +11,7 @@ const LINKS = {
 const PROJECTS: ProjectProps[] = [
   {
     title: "Sight-based mouse control software",
-    technology: "Python, machine learning",
+    technology: ["python", "machine learning"],
     links: [
       {
         label: "github",
@@ -21,7 +21,7 @@ const PROJECTS: ProjectProps[] = [
   },
   {
     title: `"Jump" platformer mobile game`,
-    technology: "Unity, C#",
+    technology: ["unity", "c#"],
     links: [
       {
         label: "GitHub",
@@ -31,7 +31,7 @@ const PROJECTS: ProjectProps[] = [
   },
   {
     title: `"Swamp Hacks" hackathon site & systems`,
-    technology: "JavaScript, google cloud, firebase, NFC",
+    technology: ["javascript", "google cloud", "firebase", "nfc"],
     links: [
       {
         label: "site github",
@@ -60,18 +60,10 @@ export default async function Home() {
           </h1>
         </div>
         <nav className="md:mt-40 mt-20 space-y-1 max-w-prose w-full flex flex-col md:mx-auto ml-8">
-          <Anchor nextLink={false} href="#about">
-            About
-          </Anchor>
-          <Anchor nextLink={false} href="#projects">
-            Projects
-          </Anchor>
-          <Anchor nextLink={false} href="#blog-posts">
-            Blog posts
-          </Anchor>
-          <Anchor nextLink={false} href="#connect">
-            Connect
-          </Anchor>
+          <Anchor href="#about">About</Anchor>
+          <Anchor href="#projects">Projects</Anchor>
+          <Anchor href="#blog-posts">Blog posts</Anchor>
+          <Anchor href="#connect">Connect</Anchor>
         </nav>
         <div className="max-w-prose w-full md:mx-auto ml-8">
           <div className="mt-4 w-8 h-96 bg-neutral-50" />

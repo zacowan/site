@@ -7,6 +7,8 @@ const MEDIUM_PROFILE_LINK = "https://medium.com/@zacowan";
 const MEDIUM_RSS_FEED_URL = "https://medium.com/feed/@zacowan";
 const RSS_2_JSON_URL = "https://api.rss2json.com/v1/api.json";
 
+const RECENT_POSTS_LIMIT = 3;
+
 interface RSSFeedItem {
   title: string;
   pubDate: string;
@@ -23,24 +25,14 @@ interface RSSFeedItem {
 const getFeedItems = async () => {
   const feed = await fetch(`${RSS_2_JSON_URL}?rss_url=${MEDIUM_RSS_FEED_URL}`);
   const json = await feed.json();
-  console.log(json);
-  return json.items as RSSFeedItem[];
+  const items = json.items as RSSFeedItem[];
+  const itemsLimit =
+    items.length < RECENT_POSTS_LIMIT ? items.length : RECENT_POSTS_LIMIT;
+  return items.slice(0, itemsLimit);
 };
 
-const cleanupFeedItemDescription = (description: string) => {
-  try {
-    const justTheText = description.split("</p>")[0].substring(4);
-    return justTheText;
-  } catch (error) {
-    console.error(error);
-    return description;
-  }
-};
+interface RecentPostsProps extends ComponentPropsWithoutRef<"div"> {}
 
-interface RecentPostsProps
-  extends Omit<ComponentPropsWithoutRef<"div">, "aria-live"> {}
-
-// TODO: aria
 export default function RecentPosts(props: RecentPostsProps) {
   const [loading, setLoading] = useState(false);
   const [feedItems, setFeedItems] = useState<RSSFeedItem[]>([]);
@@ -60,7 +52,7 @@ export default function RecentPosts(props: RecentPostsProps) {
   }, []);
 
   return (
-    <div aria-live="polite" {...props}>
+    <div {...props}>
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -75,13 +67,15 @@ export default function RecentPosts(props: RecentPostsProps) {
                     <PostCard
                       href={item.link}
                       title={item.title}
-                      description={cleanupFeedItemDescription(item.description)}
                       date={item.pubDate}
+                      categories={item.categories}
                     />
                   </li>
                 ))}
               </ul>
-              <Anchor href={MEDIUM_PROFILE_LINK}>View All</Anchor>
+              <Anchor className="block mt-4" href={MEDIUM_PROFILE_LINK}>
+                View All
+              </Anchor>
             </>
           )}
         </>
