@@ -20,14 +20,6 @@ export default function RootLayout({
         {children}
         <footer className="flex justify-center px-3 py-20 border-t border-neutral-500 mt-20">
           <div className="max-w-prose w-full space-y-8">
-            <ul className="flex space-x-4">
-              <li>
-                <Anchor href="/">Home</Anchor>
-              </li>
-              <li>
-                <Anchor href="/blog">Blog</Anchor>
-              </li>
-            </ul>
             <p className="block text-xs text-neutral-300">
               Designed and engineered by Zachary Cowan.
             </p>

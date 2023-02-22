@@ -13,10 +13,8 @@ export default function Project({ links, title, technology }: ProjectProps) {
   return (
     <li className="border-l-4 px-3 space-y-1 hover:border-l-8 transition-all duration-75">
       <div>
-        <h3 className="font-extrabold lowercase text-lg tracking-wide">
-          {title}
-        </h3>
-        <div aria-label="technology" className="text-neutral-300 text-sm">
+        <h3 className="font-extrabold text-xl tracking-wide">{title}</h3>
+        <div aria-label="technology" className="text-neutral-300">
           {technology}
         </div>
       </div>
