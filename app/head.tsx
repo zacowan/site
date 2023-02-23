@@ -7,6 +7,27 @@ export default function Head() {
         name="description"
         content="Learn about Zachay Cowan's experience and connect with him."
       />
+      <meta name="keywords" content="zachary,cowan,blog" />
+      <meta property="og:title" content="zacowan" />
+      <meta
+        property="og:site_name"
+        content="Zachary Cowan's Personal Website"
+      />
+      <meta property="og:url" content="https://www.zacowan.com" />
+      <meta
+        property="og:description"
+        content="Learn about Zachay Cowan's experience and connect with him."
+      />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:image"
+        content="https://www.zacowan.com/social_card.png"
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:image"
+        content="https://www.zacowan.com/social_card.png"
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
