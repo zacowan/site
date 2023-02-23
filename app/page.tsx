@@ -60,10 +60,18 @@ export default async function Home() {
           </h1>
         </div>
         <nav className="md:mt-40 mt-20 space-y-1 max-w-prose w-full flex flex-col md:mx-auto ml-8">
-          <Anchor href="#about">About</Anchor>
-          <Anchor href="#projects">Projects</Anchor>
-          <Anchor href="#blog-posts">Blog posts</Anchor>
-          <Anchor href="#connect">Connect</Anchor>
+          <Anchor useTag href="#about">
+            About
+          </Anchor>
+          <Anchor useTag href="#projects">
+            Projects
+          </Anchor>
+          <Anchor useTag href="#blog-posts">
+            Blog posts
+          </Anchor>
+          <Anchor useTag href="#connect">
+            Connect
+          </Anchor>
         </nav>
         <div className="max-w-prose w-full md:mx-auto ml-8">
           <div className="mt-4 w-8 h-96 bg-neutral-50" />
