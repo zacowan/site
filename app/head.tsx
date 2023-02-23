@@ -5,10 +5,10 @@ export default function Head() {
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="description"
-        content="Learn about Zachay Cowan's experience and connect with him."
+        content="Learn about Zachary Cowan's experience, see what he's been working on, and connect with him."
       />
       <meta name="keywords" content="zachary,cowan,blog" />
-      <meta property="og:title" content="zacowan" />
+      <meta property="og:title" content="Zach's Personal Website" />
       <meta
         property="og:site_name"
         content="Zachary Cowan's Personal Website"
@@ -16,7 +16,7 @@ export default function Head() {
       <meta property="og:url" content="https://www.zacowan.com" />
       <meta
         property="og:description"
-        content="Learn about Zachay Cowan's experience and connect with him."
+        content="Learn about Zachary Cowan's experience, see what he's been working on, and connect with him."
       />
       <meta property="og:type" content="website" />
       <meta
