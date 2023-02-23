@@ -17,6 +17,10 @@ const PROJECTS: ProjectProps[] = [
         label: "github",
         href: "https://github.com/Scoobydoo181/Senior-Project-Fall-2022",
       },
+      {
+        label: "blog post",
+        href: "https://medium.com/@zacowan/using-machine-learning-based-eye-tracking-to-control-computers-88a73de10f3f",
+      },
     ],
   },
   {
