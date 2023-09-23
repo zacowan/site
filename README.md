@@ -1,5 +1,4 @@
 # Zach's Personal Site
 
-> **WARNING**
-> 
+> **Warning**
 > Deprecated. Migrated to https://github.com/zacowan/web-mono.
